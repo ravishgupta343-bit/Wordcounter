@@ -1,0 +1,17 @@
+<textarea id="text" placeholder="Type or paste text here..."></textarea>
+<p>Words: <span id="words">0</span></p>
+<p>Characters: <span id="chars">0</span></p>
+
+<script>
+const textArea = document.getElementById("text");
+
+textArea.addEventListener("input", () => {
+  let text = textArea.value.trim();
+
+  let words = text.length > 0 ? text.split(/\s+/).length : 0;
+  let chars = text.length;
+
+  document.getElementById("words").innerText = words;
+  document.getElementByById("chars").innerText = chars;
+});
+</script>
